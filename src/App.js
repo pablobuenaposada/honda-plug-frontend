@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import Stocks from './components/Stocks'
+import Sticker from './components/Sticker'
 
-function App() {
+const App = () => {
+  const [stocks] = useState([
+      {
+          title: 'whatever',
+          source: 'tegiwa',
+          country: 'ES',
+          available: true,
+          discontinued: false,
+          price: "11.23€"
+      },
+      {
+          title: 'whatever2',
+          source: 'dealership',
+          country: 'FR',
+          available: false,
+          discontinued: true,
+          price: "$10.11"
+      },
+      {
+          title: 'whatever2',
+          source: 'dealership',
+          country: 'FR',
+          available: false,
+          discontinued: true,
+          price: "$10.11"
+      }
+  ])
+    const [part] = useState(
+      {
+          number: '31512-SB0-900',
+      },
+
+  )
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+        <Sticker part={part}></Sticker>
+        <Stocks stocks={stocks}></Stocks>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
