@@ -12,13 +12,3 @@
     width: 50%;
 }
 
-.slider {
-  width: 100%;
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-
-}
-
-.slider img {
-  max-width: 100%;
-  height: auto; /* Ajusta la altura automáticamente */
-}

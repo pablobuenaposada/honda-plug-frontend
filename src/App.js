@@ -2,7 +2,8 @@ import { useState } from 'react'
 import Stocks from './components/Stocks'
 import Sticker from './components/Sticker'
 import Header from './components/Header'
-import SimpleImageSlider from "react-simple-image-slider";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 import './App.css'
 
 
@@ -51,13 +52,14 @@ const App = () => {
         <Header/>
         <div className='half-width'>
           <div className='slider'>
-              <SimpleImageSlider
-                width={896}
-                height={504}
-                images={images}
-                showBullets={true}
-                showNavs={true}
-              />
+              <Carousel>
+                <div>
+                    <img src='https://www.a4h-tech.com/media/catalog/product/cache/b95a08d73eb773480bc6ad14fbd63dcf/1/5/15100-prb-a01-oem-honda-oliepomp-k20a-motoren-all4honda.jpg' />
+                </div>
+                <div>
+                    <img src="https://www.a4h-tech.com/media/catalog/product/cache/b95a08d73eb773480bc6ad14fbd63dcf/1/5/15100-plc-003.jpg" />
+                </div>
+            </Carousel>
           </div>
         </div>
         <div className='half-width'>
