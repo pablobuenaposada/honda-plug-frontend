@@ -6,7 +6,7 @@ const Sticker = ({ part }) => {
     return (
         <div className='sticker'>
             <div className='half-width'>
-                <img src={logo}/>
+                <img className='honda-logo' src={logo}/>
             </div>
             <div className='half-width'>
                 <p>GENUINE PARTS<br/>Honda Motor Co., Ltd.</p>
