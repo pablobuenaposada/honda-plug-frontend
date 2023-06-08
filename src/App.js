@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Stocks from './components/Stocks'
 import Sticker from './components/Sticker'
 import Header from './components/Header'
+import Prices from './components/Prices'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import './App.css'
@@ -41,12 +42,6 @@ const App = () => {
 
   )
 
-  const images = [
-  { url: "https://www.a4h-tech.com/media/catalog/product/cache/b95a08d73eb773480bc6ad14fbd63dcf/1/5/15100-prb-a01-oem-honda-oliepomp-k20a-motoren-all4honda.jpg" },
-  { url: "https://www.a4h-tech.com/media/catalog/product/cache/b95a08d73eb773480bc6ad14fbd63dcf/1/5/15100-plc-003.jpg" },
-];
-
-
   return (
     <div className='container'>
         <Header/>
@@ -66,6 +61,7 @@ const App = () => {
             <Sticker part={part}></Sticker>
         </div>
         <Stocks stocks={stocks}></Stocks>
+        <Prices></Prices>
     </div>
   )
 }
