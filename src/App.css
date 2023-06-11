@@ -16,4 +16,5 @@
 .slider {
     width: 60%;
     margin: auto;
+    align-items: center;
 }
