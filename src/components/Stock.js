@@ -14,10 +14,10 @@ const Stock = ({ stock, rowColor }) => {
             <td>{stock.title}</td>
             <td>{stock.source}</td>
             <td>{getFlagEmoji(stock.country)}</td>
-            <td>{stock.available ? '🟢' : '🔴'}</td>
-            <td>{stock.discontinued ? '🟢' : '🔴'}</td>
-            <td>{stock.price}</td>
-            <td>🛒</td>
+            <td>{stock.available ? '🟢' : (stock.available === null ? '❔' : '🔴')}</td>
+            <td>{stock.discontinued ? '🟢' : (stock.discontinued === null ? '❔' : '🔴')}</td>
+            <td>{stock.price} {stock.price_currency}</td>
+            <td><a href={stock.url} target="_blank" rel="noopener noreferrer">🛒</a></td>
         </tr>
     )
 }
