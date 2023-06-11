@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Stock from './Stock'
-import './Stocks.css'
+import React from "react";
+import PropTypes from "prop-types";
+import Stock from "./Stock";
+import "./Stocks.css";
 
 const Stocks = ({ stocks }) => {
   return (
-    <table className='table'>
+    <table className="table">
       <tr>
         <th>TITLE</th>
         <th>SOURCE</th>
@@ -16,11 +16,15 @@ const Stocks = ({ stocks }) => {
         <th>PRICE</th>
       </tr>
       {stocks.map((stock, index) => (
-        <Stock key={index} stock={stock} rowColor={index % 2 === 0 ? 'even' : 'odd'} />
+        <Stock
+          key={index}
+          stock={stock}
+          rowColor={index % 2 === 0 ? "even" : "odd"}
+        />
       ))}
     </table>
-  )
-}
+  );
+};
 
 Stocks.propTypes = {
   stocks: PropTypes.arrayOf(
@@ -33,9 +37,9 @@ Stocks.propTypes = {
       quantity: PropTypes.number,
       price: PropTypes.number.isRequired,
       price_currency: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired
+      url: PropTypes.string.isRequired,
     })
-  ).isRequired
-}
+  ).isRequired,
+};
 
-export default Stocks
+export default Stocks;

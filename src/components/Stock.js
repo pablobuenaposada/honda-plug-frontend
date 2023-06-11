@@ -1,28 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './Stock.css'
+import React from "react";
+import PropTypes from "prop-types";
+import "./Stock.css";
 
 const Stock = ({ stock, rowColor }) => {
   const getFlagEmoji = (countryCode) => {
     const codePoints = countryCode
       .toUpperCase()
-      .split('')
-      .map((char) => 127397 + char.charCodeAt())
-    return String.fromCodePoint(...codePoints)
-  }
+      .split("")
+      .map((char) => 127397 + char.charCodeAt());
+    return String.fromCodePoint(...codePoints);
+  };
 
   return (
     <tr className={rowColor}>
       <td>{stock.title}</td>
       <td>{stock.source}</td>
       <td>{getFlagEmoji(stock.country)}</td>
+      <td>{stock.available ? "🟢" : stock.available === null ? "❔" : "🔴"}</td>
       <td>
-        {stock.available ? '🟢' : stock.available === null ? '❔' : '🔴'}
+        {stock.discontinued ? "🟢" : stock.discontinued === null ? "❔" : "🔴"}
       </td>
-      <td>
-        {stock.discontinued ? '🟢' : stock.discontinued === null ? '❔' : '🔴'}
-      </td>
-      <td>{stock.quantity ? stock.quantity : '❔'}</td>
+      <td>{stock.quantity ? stock.quantity : "❔"}</td>
       <td>
         {stock.price} {stock.price_currency}
       </td>
@@ -32,8 +30,8 @@ const Stock = ({ stock, rowColor }) => {
         </a>
       </td>
     </tr>
-  )
-}
+  );
+};
 
 Stock.propTypes = {
   stock: PropTypes.shape({
@@ -45,9 +43,9 @@ Stock.propTypes = {
     quantity: PropTypes.number,
     price: PropTypes.number.isRequired,
     price_currency: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
+    url: PropTypes.string.isRequired,
   }),
-  rowColor: PropTypes.string.isRequired
-}
+  rowColor: PropTypes.string.isRequired,
+};
 
-export default Stock
+export default Stock;
