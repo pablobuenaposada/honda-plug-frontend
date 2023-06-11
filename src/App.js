@@ -13,10 +13,8 @@ const baseURL = "http://hondaplug.local:1337/api/parts/15100-prb-a01/"
 
 
 const App = () => {
-
     const [part, setPart] = React.useState(null);
     const [stocks, setStocks] = useState([]);
-
 
     React.useEffect(() => {
         axios.get(baseURL)
@@ -43,17 +41,16 @@ const App = () => {
         <div className='half-width'>
           <div className='slider'>
               <Carousel>
-                <div>
-                    <img src='https://www.a4h-tech.com/media/catalog/product/cache/b95a08d73eb773480bc6ad14fbd63dcf/1/5/15100-prb-a01-oem-honda-oliepomp-k20a-motoren-all4honda.jpg' />
-                </div>
-                <div>
-                    <img src="https://www.a4h-tech.com/media/catalog/product/cache/b95a08d73eb773480bc6ad14fbd63dcf/1/5/15100-plc-003.jpg" />
-                </div>
-            </Carousel>
+                  {stocks.map((stock) => (
+                    stock.images.map((image, index) => (
+                      <div><img src={image.url}/></div>
+                    ))
+                  ))}
+              </Carousel>
           </div>
         </div>
         <div className='half-width'>
-            {part && <Sticker reference={part.reference} />}
+            {part && stocks && stocks.length > 0 && <Sticker reference={part.reference} title={stocks[0].title}/>}
         </div>
         <Stocks stocks={stocks}></Stocks>
         <Prices stocks={stocks}></Prices>

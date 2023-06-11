@@ -2,7 +2,7 @@ import './Sticker.css';
 import logo from '../logo.svg';
 
 
-const Sticker = ({ reference }) => {
+const Sticker = ({ reference, title }) => {
     return (
         <div className='sticker'>
             <div className='half-width'>
@@ -12,7 +12,7 @@ const Sticker = ({ reference }) => {
                 <p>GENUINE PARTS<br/>Honda Motor Co., Ltd.</p>
             </div>
             <div className='data'>
-                <p className='title'>SW UNIT, START</p>
+                <p className='title'>{title}</p>
                 <p className='part-number'>{reference}</p>
                 <div>QTY</div>
             </div>
