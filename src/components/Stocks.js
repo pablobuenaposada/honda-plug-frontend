@@ -10,6 +10,7 @@ const Stocks = ({ stocks }) => {
           <th>COUNTRY</th>
           <th>AVAILABLE</th>
           <th>DISCONTINUED</th>
+          <th>QUANTITY</th>
           <th>PRICE</th>
       </tr>
       {stocks.map((stock, index) => (

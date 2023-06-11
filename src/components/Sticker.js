@@ -14,7 +14,6 @@ const Sticker = ({ reference, title }) => {
             <div className='data'>
                 <p className='title'>{title}</p>
                 <p className='part-number'>{reference}</p>
-                <div>QTY</div>
             </div>
 
         </div>
