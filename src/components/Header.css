@@ -2,3 +2,7 @@
     width: 100%;
     text-align: center;
 }
+
+.logo {
+    max-width: 40%;
+}

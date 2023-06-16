@@ -1,0 +1,23 @@
+.menu {
+  text-align: center;
+  font-size: 0.9vw;
+  font-weight: bold;
+  font-style: italic;
+  width: 100%;
+  color: #837c7c;
+
+}
+
+.menu a {
+    margin: 0.5vw;
+}
+
+.search-box {
+    background-color: #837c7c;
+    border-width: 0px;
+    height: 100%;
+}
+
+.search-box::placeholder {
+    color: #4a4545;
+}

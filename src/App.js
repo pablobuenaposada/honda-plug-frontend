@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Stocks from "./components/Stocks";
 import Sticker from "./components/Sticker";
 import Header from "./components/Header";
+import Menu from "./components/Menu";
 import Prices from "./components/Prices";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -35,6 +36,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
+      <Menu />
       <div className="half-width">
         <div className="slider">
           <Carousel>
