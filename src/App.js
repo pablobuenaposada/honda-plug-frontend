@@ -1,6 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Stocks from "./components/Stocks";
 import Sticker from "./components/Sticker";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useParams,
+} from "react-router-dom";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Prices from "./components/Prices";
@@ -9,13 +15,28 @@ import { Carousel } from "react-responsive-carousel";
 import "./App.css";
 import axios from "axios";
 
-const baseURL = "http://hondaplug.local:1337/api/parts/15100-prb-a01/";
-
 const App = () => {
-  const [part, setPart] = React.useState(null);
-  const [stocks, setStocks] = useState([]);
+  return (
+    <Router>
+      <div className="container">
+        <Header />
+        <Menu />
 
-  React.useEffect(() => {
+        <Routes>
+          <Route path="/part/:partId" element={<PartContent />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
+
+const PartContent = () => {
+  const [part, setPart] = useState(null);
+  const [stocks, setStocks] = useState([]);
+  const { partId } = useParams();
+  const baseURL = "http://hondaplug.local:1337/api/parts/" + partId;
+
+  useEffect(() => {
     axios.get(baseURL).then((response) => {
       setPart(response.data);
 
@@ -34,9 +55,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="container">
-      <Header />
-      <Menu />
+    <>
       <div className="half-width">
         <div className="slider">
           <Carousel>
@@ -55,9 +74,9 @@ const App = () => {
           <Sticker reference={part.reference} title={stocks[0].title} />
         )}
       </div>
-      <Stocks stocks={stocks}></Stocks>
-      <Prices stocks={stocks}></Prices>
-    </div>
+      <Stocks stocks={stocks} />
+      <Prices stocks={stocks} />
+    </>
   );
 };
 
