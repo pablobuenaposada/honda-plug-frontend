@@ -1,17 +1,17 @@
 .sticker {
-    padding: 1% 0 3%;
-    border-radius: 10px;
-    background-color: #E5432D;
-    color: #FFFDFC;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    width: 80%;
-    height: 80%;
-    margin: auto;
+  padding: 1% 0 3%;
+  border-radius: 10px;
+  background-color: #e5432d;
+  color: #fffdfc;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  width: 80%;
+  height: 80%;
+  margin: auto;
 }
 
 .half-width {
@@ -19,22 +19,22 @@
 }
 
 .data {
-    font-weight: normal;
-    margin: 0 10%;
-    border-radius: 10px;
-    flex-basis: 100%;
-    color: black;
-    background-color: #FFFDFC;
+  font-weight: normal;
+  margin: 0 10%;
+  border-radius: 10px;
+  flex-basis: 100%;
+  color: black;
+  background-color: #fffdfc;
 }
 
 .title {
-    font-size: 2.2em;
+  font-size: 2.2em;
 }
 
 .part-number {
-    font-size: 3.0vw;
-    font-weight: bold;
-    white-space: nowrap;
+  font-size: 3vw;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 .honda-logo {

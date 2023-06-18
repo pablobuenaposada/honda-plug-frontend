@@ -15,6 +15,7 @@
   border-width: 0;
   padding: 0;
   border-radius: 5px 0 0 5px;
+  width: 20%;
 }
 
 .search-box::placeholder {
@@ -40,11 +41,10 @@
   font-size: 0.8vw;
   font-weight: bold;
   font-style: italic;
-  width: 100%;
   color: #837c7c;
-   margin-top: 7px;
+  margin-top: 7px;
 }
 
 .sections a {
- padding: 10px;
+  padding: 10px;
 }
