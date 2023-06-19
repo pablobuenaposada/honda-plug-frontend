@@ -14,6 +14,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import "./App.css";
 import axios from "axios";
+import Home from "./components/Home";
 
 const App = () => {
   return (
@@ -21,8 +22,8 @@ const App = () => {
       <div className="container">
         <Header />
         <Menu />
-
         <Routes>
+          <Route index element={<Home />} />
           <Route path="/part/:partId" element={<PartContent />} />
         </Routes>
       </div>
