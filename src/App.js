@@ -72,7 +72,10 @@ const PartContent = () => {
       </div>
       <div className="half-width">
         {part && stocks && stocks.length > 0 && (
-          <Sticker reference={part.reference} title={stocks[0].title} />
+          <Sticker
+            reference={part.reference}
+            title={part.title.toUpperCase()}
+          />
         )}
       </div>
       <Stocks stocks={stocks} />
