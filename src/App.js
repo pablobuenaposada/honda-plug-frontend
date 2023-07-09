@@ -35,7 +35,7 @@ const PartContent = () => {
   const [part, setPart] = useState(null);
   const [stocks, setStocks] = useState([]);
   const { partId } = useParams();
-  const baseURL = "http://hondaplug.local:1337/api/parts/" + partId;
+  const baseURL = "https://hondaplug.com/api/parts/" + partId;
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {
@@ -43,7 +43,7 @@ const PartContent = () => {
 
       const promises = response.data.stock.map((item) =>
         axios
-          .get(`http://hondaplug.local:1337/api/stocks/${item.id}/`)
+          .get(`https://hondaplug.com/api/stocks/${item.id}/`)
           .then((itemResponse) => {
             return itemResponse.data;
           })
