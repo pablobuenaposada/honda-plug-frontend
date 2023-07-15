@@ -15,7 +15,7 @@ const Menu = () => {
       fetch(apiUrl)
         .then((response) => {
           if (response.ok) {
-            window.location.href = `http://localhost:3000/part/${searchQuery}`;
+            window.location.href = `https://hondaplug.com/part/${searchQuery}`;
           } else {
             console.error("API error:", response.status);
           }
