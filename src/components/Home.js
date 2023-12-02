@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import Latest from "./Latest";
 
 const Home = () => {
   return (
@@ -10,7 +9,6 @@ const Home = () => {
       <br></br>
       If you think there is a part is missing in our records or there&apos;s an
       interesting shop that is missing let us know through Contact section.
-      <Latest />
     </div>
   );
 };
