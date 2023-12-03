@@ -34,6 +34,13 @@ const Menu = () => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    // Check if the pressed key is Enter (key code 13)
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="menu">
       <div className="menu">
@@ -43,6 +50,7 @@ const Menu = () => {
             placeholder="15100-PRB-A01"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyPress={handleKeyPress}
           />
           <div className="search-icon-container" onClick={handleSearch}>
             <FontAwesomeIcon className="search-icon" icon={faSearch} />
