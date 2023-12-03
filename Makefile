@@ -16,3 +16,4 @@ docker/run/prod:
 	docker create --name dummy-container honda-plug-react
 	docker cp dummy-container:/app/build ./build
 	docker rm dummy-container
+	docker restart $(docker ps -qf ancestor=honda-plug-nginx)
