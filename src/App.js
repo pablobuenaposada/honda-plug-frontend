@@ -15,8 +15,15 @@ import { Carousel } from "react-responsive-carousel";
 import "./App.css";
 import axios from "axios";
 import Home from "./components/Home";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-X5J9MZP0HL");
 
 const App = () => {
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+  }, []);
+
   return (
     <Router>
       <div className="container">
