@@ -17,4 +17,5 @@ docker/run/prod:
 	rm -rf build
 	docker cp dummy-container:/app/build ./build
 	docker rm dummy-container
-	docker restart $(docker ps -qf ancestor=honda-plug-nginx)
+	chown -R 777 build
+	docker restart $(shell docker ps -qf ancestor=honda-plug-nginx)
