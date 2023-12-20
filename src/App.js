@@ -42,6 +42,7 @@ const PartContent = () => {
   const baseURL = "https://hondaplug.com/api/parts/" + partId;
 
   useEffect(() => {
+    document.title = `Honda Plug - ${partId}`;
     axios.get(baseURL).then((response) => {
       setPart(response.data);
 
