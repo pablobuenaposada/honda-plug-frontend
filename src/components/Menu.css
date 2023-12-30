@@ -1,5 +1,6 @@
 .menu {
   width: 100%;
+  height: 10vh;
 }
 
 .search {
@@ -42,7 +43,7 @@
   font-weight: bold;
   font-style: italic;
   color: #837c7c;
-  margin-top: 7px;
+  margin-top: 10px;
 }
 
 .sections a {

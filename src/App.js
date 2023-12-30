@@ -12,6 +12,7 @@ import Menu from "./components/Menu";
 import Prices from "./components/Prices";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import Footer from "./components/Footer";
 import "./App.css";
 import axios from "axios";
 import Home from "./components/Home";
@@ -27,7 +28,7 @@ const App = () => {
         <Header />
         <Menu />
         <Routes>
-          <Route index element={<Home />} />
+          <Route index element={<Home /> && <Footer />} />
           <Route path="/part/:partId" element={<PartContent />} />
         </Routes>
       </div>

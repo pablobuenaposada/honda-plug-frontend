@@ -2,15 +2,7 @@ import React from "react";
 import "./Home.css";
 
 const Home = () => {
-  return (
-    <div className="home">
-      The aim of Honda Plug is to track Honda original parts stocks around the
-      world.
-      <br></br>
-      If you think there is a part is missing in our records or there&apos;s an
-      interesting shop that is missing let us know through Contact section.
-    </div>
-  );
+  return <div className="home">a</div>;
 };
 
 export default Home;
