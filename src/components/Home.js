@@ -1,8 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Home.css";
 
-const Home = () => {
-  return <div className="home"></div>;
+const Home = ({ content }) => {
+  return <div className="home">{content}</div>;
+};
+
+Home.propTypes = {
+  content: PropTypes.node,
 };
 
 export default Home;

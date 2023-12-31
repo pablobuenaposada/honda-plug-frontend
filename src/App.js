@@ -17,18 +17,24 @@ import "./App.css";
 import axios from "axios";
 import Home from "./components/Home";
 import ReactGA from "react-ga4";
+import PropTypes from "prop-types";
 
 ReactGA.initialize("G-X5J9MZP0HL");
 ReactGA.send("pageview");
 
 const App = () => {
+  const [homeContent, setHomeContent] = useState(null);
+  const updateHomeContent = (newContent) => {
+    setHomeContent(newContent);
+  };
+
   return (
     <Router>
       <div className="container">
         <Header />
-        <Menu />
+        <Menu updateHomeContent={updateHomeContent} />
         <Routes>
-          <Route index element={<Home />} />
+          <Route index element={<Home content={homeContent} />} />
           <Route path="/part/:partId" element={<PartContent />} />
         </Routes>
         <Footer />
@@ -89,6 +95,10 @@ const PartContent = () => {
       <Prices stocks={stocks} />
     </>
   );
+};
+
+App.propTypes = {
+  updateHomeContent: PropTypes.func.isRequired,
 };
 
 export default App;
