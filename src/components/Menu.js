@@ -2,8 +2,8 @@ import "./Menu.css";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import LatestTable from "./Latest"; // Import the LatestTable component
-import { ColorRing } from "react-loader-spinner";
+import LatestTable from "./Latest";
+import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 
 const Menu = ({ updateHomeContent }) => {
@@ -13,13 +13,7 @@ const Menu = ({ updateHomeContent }) => {
     if (searchQuery.trim() !== "") {
       const apiUrl = `https://hondaplug.com/api/parts/search/?query=${searchQuery}`;
 
-      updateHomeContent(
-        <div key="loading" style={{ textAlign: "center" }}>
-          <ColorRing
-            colors={["#0d917e", "#0d917e", "#0d917e", "#0d917e", "#0d917e"]}
-          />
-        </div>
-      );
+      updateHomeContent(<Spinner />);
 
       try {
         const response = await fetch(apiUrl);
