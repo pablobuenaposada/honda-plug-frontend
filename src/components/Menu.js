@@ -28,9 +28,11 @@ const Menu = ({ updateHomeContent }) => {
           );
         } else {
           console.error("API error:", response.status);
+          updateHomeContent(null);
         }
       } catch (error) {
         console.error("API error:", error);
+        updateHomeContent(null);
       }
     }
   };
