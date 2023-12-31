@@ -8,13 +8,18 @@ import PropTypes from "prop-types";
 
 const Menu = ({ updateHomeContent }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleSearch = async () => {
     if (searchQuery.trim() !== "") {
       const apiUrl = `https://hondaplug.com/api/parts/search/?query=${searchQuery}`;
 
-      setIsLoading(true);
+      updateHomeContent(
+        <div key="loading" style={{ textAlign: "center" }}>
+          <ColorRing
+            colors={["#0d917e", "#0d917e", "#0d917e", "#0d917e", "#0d917e"]}
+          />
+        </div>
+      );
 
       try {
         const response = await fetch(apiUrl);
@@ -32,8 +37,6 @@ const Menu = ({ updateHomeContent }) => {
         }
       } catch (error) {
         console.error("API error:", error);
-      } finally {
-        setIsLoading(false);
       }
     }
   };
@@ -64,15 +67,6 @@ const Menu = ({ updateHomeContent }) => {
         <a>HOME</a>
         <a>CONTACT</a>
       </div>
-
-      {isLoading && [
-        updateHomeContent(null),
-        <div key="loading" style={{ textAlign: "center" }}>
-          <ColorRing
-            colors={["#0d917e", "#0d917e", "#0d917e", "#0d917e", "#0d917e"]}
-          />
-        </div>,
-      ]}
     </div>
   );
 };
