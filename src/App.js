@@ -28,9 +28,10 @@ const App = () => {
         <Header />
         <Menu />
         <Routes>
-          <Route index element={<Home /> && <Footer />} />
+          <Route index element={<Home />} />
           <Route path="/part/:partId" element={<PartContent />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
