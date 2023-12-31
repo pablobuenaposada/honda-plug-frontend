@@ -8,8 +8,8 @@ const LatestTable = ({ data }) => {
       <table className="table">
         <thead>
           <tr>
-            <th>Reference</th>
-            <th>Title</th>
+            <th>PART NUMBER</th>
+            <th>TITLE</th>
           </tr>
         </thead>
         <tbody>
