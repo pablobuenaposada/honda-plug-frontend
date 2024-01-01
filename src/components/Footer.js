@@ -4,12 +4,10 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-      The aim of Honda Plug is to track Honda original parts stocks around the
-      world.
+      The aim of Honda Plug is to track Honda original parts around the world.
       <br></br>
-      If you think there is a part is missing in our records or there&apos;s an
-      interesting shop that we are not tracking let us know through Contact
-      section.
+      If you think there is a part that is missing or there is an interesting
+      shop that we are not tracking let us know through Contact section.
     </div>
   );
 };
