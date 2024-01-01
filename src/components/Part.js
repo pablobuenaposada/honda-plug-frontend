@@ -1,37 +1,41 @@
 import React, { useState, useEffect } from "react";
 import Stocks from "./Stocks";
 import Sticker from "./Sticker";
-import { useParams } from "react-router-dom";
 import Prices from "./Prices";
 import { Carousel } from "react-responsive-carousel";
 import axios from "axios";
 import "./Part.css";
+import Spinner from "./Spinner";
+import PropTypes from "prop-types";
 
-const PartContent = () => {
+const PartContent = ({ reference, updateHomeContent }) => {
   const [part, setPart] = useState(null);
   const [stocks, setStocks] = useState([]);
-  const { partId } = useParams();
-  const baseURL = "https://hondaplug.com/api/parts/" + partId;
+  const [loading, setLoading] = useState(true);
+  const baseURL = "https://hondaplug.com/api/parts/" + reference + "/";
 
   useEffect(() => {
-    document.title = `Honda Plug - ${partId}`;
+    document.title = `Honda Plug - ${reference}`;
+
     axios.get(baseURL).then((response) => {
       setPart(response.data);
 
       const promises = response.data.stock.map((item) =>
         axios
           .get(`https://hondaplug.com/api/stocks/${item.id}/`)
-          .then((itemResponse) => {
-            return itemResponse.data;
-          })
+          .then((itemResponse) => itemResponse.data)
       );
 
       Promise.all(promises).then((stockData) => {
         setStocks(stockData);
+        setLoading(false); // Set loading to false when data fetching is complete
       });
     });
-  }, []);
+  }, [reference]);
 
+  if (loading) {
+    return <Spinner />;
+  }
   return (
     <>
       <div className="part">
@@ -61,6 +65,11 @@ const PartContent = () => {
       </div>
     </>
   );
+};
+
+PartContent.propTypes = {
+  updateHomeContent: PropTypes.func.isRequired,
+  reference: PropTypes.string,
 };
 
 export default PartContent;
