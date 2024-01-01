@@ -34,29 +34,31 @@ const PartContent = () => {
 
   return (
     <>
-      <div className="half-width">
-        <div className="slider">
-          <Carousel>
-            {stocks.map((stock) =>
-              stock.images.map((image, index) => (
-                <div key={index}>
-                  <img src={image.url} alt={`Image ${index}`} />
-                </div>
-              ))
-            )}
-          </Carousel>
+      <div className="part">
+        <div className="half-width">
+          <div className="slider">
+            <Carousel>
+              {stocks.map((stock) =>
+                stock.images.map((image, index) => (
+                  <div key={index}>
+                    <img src={image.url} alt={`Image ${index}`} />
+                  </div>
+                ))
+              )}
+            </Carousel>
+          </div>
         </div>
+        <div className="half-width">
+          {part && stocks && stocks.length > 0 && (
+            <Sticker
+              reference={part.reference}
+              title={part.title.toUpperCase()}
+            />
+          )}
+        </div>
+        <Stocks stocks={stocks} />
+        <Prices stocks={stocks} />
       </div>
-      <div className="half-width">
-        {part && stocks && stocks.length > 0 && (
-          <Sticker
-            reference={part.reference}
-            title={part.title.toUpperCase()}
-          />
-        )}
-      </div>
-      <Stocks stocks={stocks} />
-      <Prices stocks={stocks} />
     </>
   );
 };

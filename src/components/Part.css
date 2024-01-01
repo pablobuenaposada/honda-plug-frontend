@@ -1,8 +1,6 @@
-.home {
+.part {
   display: flex;
   flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .half-width {
