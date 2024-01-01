@@ -18,7 +18,11 @@ const Stock = ({ stock, rowColor }) => {
       <td>{getFlagEmoji(stock.country)}</td>
       <td>{stock.available ? "🟢" : stock.available === null ? "❔" : "🔴"}</td>
       <td>
-        {stock.discontinued ? "🟢" : stock.discontinued === null ? "❔" : "🔴"}
+        {stock.discontinued
+          ? "yes"
+          : stock.discontinued === null
+          ? "unknown"
+          : "no"}
       </td>
       <td>{stock.quantity ? stock.quantity : "❔"}</td>
       <td>
