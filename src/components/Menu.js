@@ -62,7 +62,7 @@ const Menu = ({ updateHomeContent }) => {
       </div>
 
       <div className="sections">
-        <a>HOME</a>
+        <a href="/">HOME</a>
         <a>CONTACT</a>
       </div>
     </div>
