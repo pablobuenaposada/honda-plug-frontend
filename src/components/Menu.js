@@ -11,6 +11,8 @@ const Menu = ({ updateHomeContent }) => {
 
   const handleSearch = async () => {
     if (searchQuery.trim() !== "") {
+      window.history.pushState(null, "", "/");
+
       const apiUrl = `https://hondaplug.com/api/parts/search/?query=${searchQuery}`;
 
       updateHomeContent(<Spinner />);
